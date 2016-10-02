@@ -14,8 +14,10 @@
       if ($scope.list === undefined || $scope.list === ''){
         $scope.showMessage = true;
         $scope.message = "Please enter data first";
+        $scope.tooMuch = 0;
       }else{
         $scope.showMessage = true;
+        $scope.aux = [];
         defineQuantity($scope.list);
       }
     };
@@ -24,23 +26,28 @@
       if(list.indexOf(';') == -1){
         $scope.tooMuch = 1;
         $scope.message = "Enjoy!";
+        $scope.aux[0] = list.toString();
       }else{
         let array = list.split(';');
         let empty = [], aux = [];
-        let i = 0
+        let i = 0;
         array.forEach(function(element, index){
           if(element === ' ' || element === ''){
             empty[i] = index;
             i++;
           }
         });
-        var j = 0;
-        array.forEach(function(element, index){
-          if(empty.indexOf(index) == -1){
-            $scope.aux[j] = array[index].trim();
-            j++;
-          }
-        });
+        if(empty.size != 0){
+          var j = 0;
+          array.forEach(function(element, index){
+            if(empty.indexOf(index) == -1){
+              $scope.aux[j] = array[index].trim();
+              j++;
+            }
+          });
+        }else{
+          $scope.aux = array;
+        }
         $scope.tooMuch = $scope.aux.length;
         if ($scope.tooMuch == 0){
           $scope.message = "Please enter data first";
