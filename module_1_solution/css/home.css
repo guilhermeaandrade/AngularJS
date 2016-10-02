@@ -1,0 +1,23 @@
+.container{
+  width: 940px !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+}
+
+.data label{
+  font-size: 20px;
+}
+
+.data input[type="text"]{
+  width: 650px;
+  height: 100px;
+}
+
+button.btn.btn-primary {
+  margin-top: 35px;
+}
+
+.data p {
+  margin-top: 3px;
+}

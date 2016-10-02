@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>First Assignment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+  </head>
+  <body class="container" ng-app="LunchCheck">
+    <div ng-controller="LunchCheckController">
+      <div class="jumbotron">
+        <h1>First Assignment</h1>
+        <p>First Coding Assignment to the Course: Single Web Application with AngularJS</p>
+      </div>
+      <div class="data">
+        <div ng-class="(tooMuch > 3 || tooMuch == 0) ? 'alert alert-danger': 'alert alert-success'" role="alert" ng-show="showMessage">
+          <strong>{{message}}</strong>
+        </div>
+        <div class="row col-md-12">
+          <div class="col-md-9">
+            <div class="input-group">
+              <label>List of itens</label><br>
+              <input type="text" class="form-control" placeholder="Items comma-separated that you usually eat for lunch" ng-model="list"><br/>
+            </div>
+            <p><strong style="color:red;">*</strong> Empty items are not considered</p>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-primary" ng-click="checkTooMuch()">Check If Too Much</button>
+          </div>
+        </div>
+        <div class="row col-md-12">
+          <hr>
+          <div ng-show="(tooMuch > 0)">
+            <h4>List of Items</h4>
+            <ul ng-repeat="item in aux track by $index">
+              <li>{{item}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
