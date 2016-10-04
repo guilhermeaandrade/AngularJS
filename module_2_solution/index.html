@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Second Assignment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+  </head>
+  <body class="container" ng-app="ShoppingListCheckOff">
+    <div class="row">
+      <div class="jumbotron">
+        <h1>Second Assignment</h1>
+        <p>Second Coding Assignment to the Course: Single Page Web Application with AngularJS</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- To Buy List -->
+        <div class="col-md-6" ng-controller="ToBuyController as toBuy">
+          <h2>To Buy:</h2>
+          <ul ng-repeat="item in toBuy.toBuyList">
+            <li>Buy {{item.quantity}} {{item.name}}
+              <button class="btn btn-default" ng-click="toBuy.removeFromBuyToAlready($index)">Bought
+                <span class="glyphicon glyphicon-ok"></span>
+              </button>
+            </li>
+          </ul>
+          <div ng-if="toBuy.toBuyList.length === 0" class="emptyMessage">Everything is bought!</div>
+        </div>
+
+        <!-- Already Bought List -->
+        <div class="col-md-6" ng-controller="AlreadyBoughtController as already">
+          <h2>Already Bought:</h2>
+          <ul ng-repeat="item in already.alreadyList">
+            <li>Bought {{item.quantity}} {{item.name}}</li>
+          </ul>
+          <div ng-if="already.alreadyList.length === 0" class="emptyMessage">Nothing bought yet.</div>
+        </div>
+      </div>
+    </div>
+    <script src="javascript/angular.min.js"></script>
+    <script src="javascript/app.js"></script>
+  </body>
+</html>

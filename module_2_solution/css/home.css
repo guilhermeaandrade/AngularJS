@@ -1,0 +1,26 @@
+.container{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10xp;
+}
+
+.emptyMessage {
+ font-weight: bold;
+ color: red;
+ font-size: 1.2em;
+}
+
+li {
+ margin-bottom: 7px;
+ font-size: 1.2em;
+ padding: 10px;
+}
+
+li > button {
+ margin-left: 6px;
+}
+
+button > span {
+ color: green;
+}
