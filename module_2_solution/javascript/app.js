@@ -12,7 +12,6 @@
     toBuy.toBuyList = ShoppingListCheckOffService.getItemsToBuy();
 
     toBuy.removeFromBuyToAlready = function(index){
-      console.log(index);
       ShoppingListCheckOffService.removeFromBuyToAlready(index);
     }
   }
