@@ -1,8 +1,8 @@
-<div class="row statistic" ng-if="narrow.found.length > 0">
+<div class="row statistic" ng-if="founds.length > 0">
   <h3>List of Items</h3>
   <div class="col-md-12">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-      <ul ng-repeat="item in narrow.found">
+      <ul ng-repeat="item in founds">
         <li>
           <div class="panel panel-default" style="width:800px">
             <div class="panel-heading" role="tab" id="heading_{{$index}}">
@@ -10,7 +10,7 @@
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{$index}}" aria-expanded="true" aria-controls="collapse_{{$index}}">
                   {{item.name}}
                 </a>
-                <button class="btn btn-primary" ng-click="narrow.removeItem($index, item)">
+                <button class="btn btn-primary" ng-click="onRemove({index: $index})">
                   Don't want this one!
                 </button>
               </h4>

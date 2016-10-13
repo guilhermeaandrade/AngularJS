@@ -9,7 +9,11 @@
 
   function FoundItems(){
     var ddo = {
-      templateUrl: 'foundItems.html'
+      templateUrl: 'foundItems.html',
+      scope: {
+        founds: '<',
+        onRemove: '&'
+      }
     };
     return ddo;
   }
@@ -38,10 +42,8 @@
       });
     };
 
-    narrow.removeItem = function(index, item) {
-      if(narrow.found.length === 1) {
-        narrow.found.splice(index, 1);
-      }
+    narrow.removeItem = function(index) {
+      narrow.found.splice(index, 1);
     }
 
     function searchItens(items, searchTerm){
