@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="javascript/angular.min.js"></script>
+    <script src="javascript/jquery-3.1.1.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
+    <script src="javascript/lodash.js"></script>
+    <script src="javascript/app.js"></script>
+  </head>
+  <body ng-app="NarrowItDownApp">
+    <div class="container" ng-controller="NarrowItDownController as narrow">
+      <form name="narrowForm">
+        <div class="col-md-12">
+          <h1>Narrow Down Your Chinese Menu Choice</h1>
+          <div class="form-group">
+            <input type="text"
+                   placeholder="Search Terms"
+                   class="form-control"
+                   ng-model="narrow.search"
+                   autofocus
+                   required />
+          </div>
+          <div class="form-group narrow-button">
+            <button class="btn btn-primary" ng-click="narrow.getMenuItems(narrow.search)">Narrow It Down For Me!</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="error">
+             <p ng-if="narrow.error_field || narrow.not_found">Not found!!!</p>
+          </div>
+        </div>
+      </form>
+      <found-items></found-items>
+    </div>
+  </body>
+</html>
