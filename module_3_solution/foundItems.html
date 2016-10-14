@@ -1,5 +1,7 @@
 <div class="row statistic" ng-if="founds.length > 0">
   <h3>List of Items</h3>
+  <p>Click on the name to view more details</p>
+  <hr>
   <div class="col-md-12">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <ul ng-repeat="item in founds">
@@ -7,6 +9,7 @@
           <div class="panel panel-default" style="width:800px">
             <div class="panel-heading" role="tab" id="heading_{{$index}}">
               <h4 class="panel-title">
+                <i class="glyphicon glyphicon-plus" aria-hidden="true" style="display:inline-block; padding-right: 10px;"></i>
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{$index}}" aria-expanded="true" aria-controls="collapse_{{$index}}">
                   {{item.name}}
                 </a>

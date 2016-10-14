@@ -20,6 +20,11 @@ input[type="text"] {
   margin-bottom: 20px;
 }
 
+.statistic p{
+  margin-left: 35px;
+  font-size: 17px;
+}
+
 .statistic li{
   list-style-type: none;
 }
